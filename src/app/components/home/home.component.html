@@ -1,0 +1,28 @@
+<div class="home-container">
+    <!-- Hero Section -->
+    <div class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title text-gradient">Welcome to PHHOTEL</h1>
+        <button nz-button nzType="primary" nzSize="large" class="hero-button">Book now</button>
+      </div>
+    </div>
+  
+    <!-- Product List Component -->
+    <app-product-list></app-product-list>
+  
+    <!-- Testimonials Carousel -->
+    <nz-carousel nzEffect="fade" nzAutoPlay>
+      <div nz-carousel-content *ngFor="let testimonial of testimonials">
+        <div class="testimonial-item">
+          <!-- Sử dụng nz-avatar với kích thước tùy chỉnh -->
+          <nz-avatar [nzSrc]="testimonial.image" nzShape="circle" [nzSize]="120" class="testimonial-avatar"></nz-avatar>
+          <h4 class="testimonial-name">{{ testimonial.name }}</h4>
+          <p class="testimonial-quote">{{ testimonial.quote }}</p>
+        </div>
+      </div>
+    </nz-carousel>
+  
+    <!-- Footer -->
+    <app-footer></app-footer>
+  </div>
+  

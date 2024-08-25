@@ -1,0 +1,29 @@
+<div class="container my-4">
+    <div class="product-list-container border-0 rounded-3 shadow-lg">
+        <div class="header-logo-title d-flex align-items-center justify-content-center position-relative mb-5">
+            <img src="../../../assets/phhotel2.PNG" alt="Hotel Logo" class="hotel-logo animated-logo">
+            <h2 class="mx-3 text-uppercase text-gradient">PHHOTEL</h2>
+            <div class="header-decoration"></div>
+        </div>
+
+        <ng-container *ngIf="(productService.products$ | async) as products">
+            <div class="row g-4">
+                <div class="col-12 col-md-6 col-lg-4" *ngFor="let product of products" (click)="onSelect(product.id)" [routerLink]="['/product', product.id]">
+                    <div class="card product-card h-100 position-relative overflow-hidden">
+                        <div class="product-image-wrapper">
+                            <img class="card-img-top img-fluid product-image" alt="Room Image">
+                            <div class="overlay">
+                                <h4 class="text-white">{{product?.id}}</h4>
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <h4 class="product-title">{{product?.name}}</h4>
+                            <p class="product-description">{{product?.description}}</p>
+                        </div>
+                        <div class="product-decoration"></div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>
