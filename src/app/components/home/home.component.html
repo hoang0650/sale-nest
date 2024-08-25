@@ -1,28 +1,56 @@
 <div class="home-container">
-    <!-- Hero Section -->
-    <div class="hero-section">
-      <div class="hero-content">
-        <h1 class="hero-title text-gradient">Welcome to PHHOTEL</h1>
-        <button nz-button nzType="primary" nzSize="large" class="hero-button">Book now</button>
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title text-gradient">Yến sào Thanh Bình</h1>
+      <button nz-button nzType="primary" nzSize="large" class="hero-button">Đặt ngay</button>
+    </div>
+  </div>
+
+  <!-- Product List Component -->
+  <app-product-list></app-product-list>
+
+  <!-- Testimonials Carousel -->
+  <!-- <nz-carousel nzEffect="fade" nzAutoPlay>
+    <div nz-carousel-content *ngFor="let testimonial of testimonials">
+      <div class="testimonial-item">
+        <nz-avatar [nzSrc]="testimonial.image" nzShape="circle" [nzSize]="120" class="testimonial-avatar"></nz-avatar>
+        <h4 class="testimonial-name">{{ testimonial.name }}</h4>
+        <p class="testimonial-quote">{{ testimonial.quote }}</p>
       </div>
     </div>
-  
-    <!-- Product List Component -->
-    <app-product-list></app-product-list>
-  
-    <!-- Testimonials Carousel -->
-    <nz-carousel nzEffect="fade" nzAutoPlay>
-      <div nz-carousel-content *ngFor="let testimonial of testimonials">
-        <div class="testimonial-item">
-          <!-- Sử dụng nz-avatar với kích thước tùy chỉnh -->
-          <nz-avatar [nzSrc]="testimonial.image" nzShape="circle" [nzSize]="120" class="testimonial-avatar"></nz-avatar>
-          <h4 class="testimonial-name">{{ testimonial.name }}</h4>
-          <p class="testimonial-quote">{{ testimonial.quote }}</p>
+  </nz-carousel> -->
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white pt-4">
+    <div class="container-fluid">
+        <div class="row footer-content">
+            <!-- Column 1 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+              <h5>About Us</h5>
+              <p>We are a team of passionate developers who create stunning web applications.</p>
+            </div>
+            <!-- Column 2 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+              <h5>Quick Links</h5>
+              <ul class="list-unstyled">
+                <li><a href="#" class="text-white">Home</a></li>
+                <li><a href="#" class="text-white">Services</a></li>
+                <li><a href="#" class="text-white">Contact</a></li>
+                <li><a href="#" class="text-white">About</a></li>
+              </ul>
+            </div>
+            <!-- Column 3 -->
+            <div class="col-lg-4 col-md-12 mb-4">
+              <h5>Contact Us</h5>
+              <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Anytown, USA</p>
+              <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+              <p><i class="fas fa-envelope"></i> info&#64;example.com</p>
+            </div>
         </div>
-      </div>
-    </nz-carousel>
-  
-    <!-- Footer -->
-    <app-footer></app-footer>
-  </div>
-  
+        <div class="text-center py-3">
+            &copy; 2024 PHHotel. All rights reserved.
+        </div>
+    </div>
+</footer>
+</div>

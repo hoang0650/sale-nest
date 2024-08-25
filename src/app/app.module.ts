@@ -20,6 +20,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 registerLocaleData(en);
 
 @NgModule({
@@ -38,7 +39,8 @@ registerLocaleData(en);
     FormsModule,
     NzLayoutModule,
     NzCarouselModule,
-    NzAvatarModule
+    NzAvatarModule,
+    NzButtonModule
   ],
   providers: [
     provideClientHydration(),
