@@ -1,32 +1,77 @@
-nz-layout {
-    background-color: white;
-  }
-  
-  /* Đặt màu nền cho footer */
-  .bg-blue {
-    background-color: #007bff; /* Màu xanh dương Bootstrap */
-  }
-  
-  /* Đặt màu nền cho nội dung footer */
-  .footer-content {
-    color: #ffffff; /* Màu chữ trắng */
-  }
-  
-  .footer-content .text-white {
-    color: #ffffff !important;
-  }
-  
-  .footer-content a {
-    color: #ffffff;
-    text-decoration: none;
-  }
-  
-  .footer-content a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Đặt khoảng cách cho các cột */
-  .mb-4 {
-    margin-bottom: 1.5rem;
-  }
-  
+/*** Spinner Start ***/
+/*** Spinner ***/
+#spinner {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .5s ease-out, visibility 0s linear .5s;
+  z-index: 99999;
+}
+
+#spinner.show {
+  transition: opacity .5s ease-out, visibility 0s linear 0s;
+  visibility: visible;
+  opacity: 1;
+}
+/*** Spinner End ***/
+
+/*** Button Start ***/
+.btn {
+  font-weight: 600;
+  transition: .5s;
+}
+
+.btn-square {
+  width: 32px;
+  height: 32px;
+}
+
+.btn-sm-square {
+  width: 34px;
+  height: 34px;
+}
+
+.btn-md-square {
+  width: 44px;
+  height: 44px;
+}
+
+.btn-lg-square {
+  width: 56px;
+  height: 56px;
+}
+
+.btn-xl-square {
+  width: 66px;
+  height: 66px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-md-square,
+.btn-lg-square,
+.btn-xl-square {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: normal;
+}
+
+.btn.btn-primary {
+  color: var(--bs-white);
+}
+
+.btn.btn-primary:hover {
+  background: var(--bs-secondary);
+  border: 1px solid var(--bs-secondary);
+}
+
+.btn.btn-secondary {
+  color: var(--bs-white);
+ 
+}
+
+.btn.btn-secondary:hover {
+  background: var(--bs-primary);
+  border: 1px solid var(--bs-primary);
+}
