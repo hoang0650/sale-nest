@@ -31,6 +31,7 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
+              "src/assets",
               {
                 "glob": "**/*",
                 "input": "public"
@@ -38,6 +39,7 @@
             ],
             "styles": [
               "src/styles.css",
+              "src/assets/css/style.css",
               "src/assets/css/bootstrap.min.css",
               "src/assets/lib/animate/animate.min.css",
               "src/assets/lib/owlcarousel/assets/owl.carousel.min.css",

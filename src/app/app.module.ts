@@ -21,6 +21,15 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+
+
+import { TestimonialComponent } from './components/testimonial/testimonial.component';
+import { ServiceComponent } from './components/service/service.component';
+import { BlogComponent } from './components/blog/blog.component';
+import { FeatureComponent } from './components/feature/feature.component';
+import { TeamComponent } from './components/team/team.component';
+import { NotfoundComponent } from './components/notfound/notfound.component';
+import { ContactComponent } from './components/contact/contact.component';
 registerLocaleData(en);
 
 @NgModule({
@@ -31,7 +40,14 @@ registerLocaleData(en);
     ProductListComponent,
     ProductDetailComponent,
     FooterComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    TestimonialComponent,
+    ServiceComponent,
+    BlogComponent,
+    FeatureComponent,
+    TeamComponent,
+    NotfoundComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
