@@ -10,108 +10,25 @@
     </div>
 </div>
 <!-- Header End -->
-<!-- Navbar & Hero End -->
-
-<!-- Modal Search Start -->
-<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog modal-fullscreen">
-    <div class="modal-content rounded-0">
-        <div class="modal-header">
-            <h4 class="modal-title mb-0" id="exampleModalLabel">Search by keyword</h4>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body d-flex align-items-center">
-            <div class="input-group w-75 mx-auto d-flex">
-                <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
-                <span id="search-icon-1" class="input-group-text btn border p-3"><i class="fa fa-search text-white"></i></span>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-<!-- Modal Search End -->
 
 <!-- Testimonial Start -->
-<div class="container-fluid testimonial py-5">
-<div class="container py-5">
-    <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-        <h4 class="text-uppercase text-primary">Testimonials</h4>
-        <h1 class="display-3 text-capitalize mb-3">Our clients reviews.</h1>
-    </div>
-    <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.3s">
-        <div class="testimonial-item text-center p-4">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt pariatur officiis quis molestias, sit iure sunt voluptatibus accusantium laboriosam dolore.
-            </p>
-            <div class="d-flex justify-content-center mb-4">
-                <img src="img/testimonial-1.jpg" class="img-fluid border border-4 border-primary" style="width: 100px; height: 100px; border-radius: 50px;" alt="">
-            </div>
-            <div class="d-block">
-                <h4 class="text-dark">Client Name</h4>
-                <p class="m-0 pb-3">Profession</p>
-                <div class="d-flex justify-content-center text-secondary">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-            </div>
-        </div>
-        <div class="testimonial-item text-center p-4">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt pariatur officiis quis molestias, sit iure sunt voluptatibus accusantium laboriosam dolore.
-            </p>
-            <div class="d-flex justify-content-center mb-4">
-                <img src="img/testimonial-2.jpg" class="img-fluid border border-4 border-primary" style="width: 100px; height: 100px; border-radius: 50px;" alt="">
-            </div>
-            <div class="d-block">
-                <h4 class="text-dark">Client Name</h4>
-                <p class="m-0 pb-3">Profession</p>
-                <div class="d-flex justify-content-center text-secondary">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-            </div>
-        </div>
-        <div class="testimonial-item text-center p-4">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt pariatur officiis quis molestias, sit iure sunt voluptatibus accusantium laboriosam dolore.
-            </p>
-            <div class="d-flex justify-content-center mb-4">
-                <img src="img/testimonial-3.jpg" class="img-fluid border border-4 border-primary" style="width: 100px; height: 100px; border-radius: 50px;" alt="">
-            </div>
-            <div class="d-block">
-                <h4 class="text-dark">Client Name</h4>
-                <p class="m-0 pb-3">Profession</p>
-                <div class="d-flex justify-content-center text-secondary">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-            </div>
-        </div>
-        <div class="testimonial-item text-center p-4">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt pariatur officiis quis molestias, sit iure sunt voluptatibus accusantium laboriosam dolore.
-            </p>
-            <div class="d-flex justify-content-center mb-4">
-                <img src="img/testimonial-3.jpg" class="img-fluid border border-4 border-primary" style="width: 100px; height: 100px; border-radius: 50px;" alt="">
-            </div>
-            <div class="d-block">
-                <h4 class="text-dark">Client Name</h4>
-                <p class="m-0 pb-3">Profession</p>
-                <div class="d-flex justify-content-center text-secondary">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<div class="testimonials-section">
+  <div class="text-center mx-auto pb-5" style="max-width: 600px;">
+      <h4 nz-typography class="text-primary">Testimonials</h4>
+      <h1 nz-typography class="display-5 text-capitalize mb-4">What Our Clients Say</h1>
+  </div>
+  <nz-carousel nzEffect="fade" nzAutoPlay nzDotPosition="bottom">
+      <div nz-carousel-content *ngFor="let testimonial of testimonials">
+          <div class="testimonial-item">
+              <p nz-typography class="mb-4">{{ testimonial.text }}</p>
+              <nz-avatar [nzSrc]="testimonial.image" nzShape="circle" [nzSize]="120"
+                  class="testimonial-avatar"></nz-avatar>
+              <h4 class="testimonial-name">{{ testimonial.name }}</h4>
+              <p nz-typography class="text-muted mb-3">{{ testimonial.profession }}</p>
+              <nz-rate [ngModel]="testimonial.rating" nzDisabled></nz-rate>
+          </div>
+          <br>
+      </div>
+  </nz-carousel>
 </div>
 <!-- Testimonial End -->

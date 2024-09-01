@@ -8,20 +8,26 @@ import { Component } from '@angular/core';
 export class HomeComponent {
   testimonials = [
     {
-      name: 'Alice Johnson',
-      quote: 'An amazing stay with exceptional service!',
-      image: 'https://randomuser.me/api/portraits/women/3.jpg'
+      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt pariatur officiis, molestias sit iure sunt voluptatibus.',
+      image: 'img/testimonial-1.jpg',
+      name: 'Client Name',
+      profession: 'Profession',
+      rating: 5
     },
     {
-      name: 'Bob Smith',
-      quote: 'Luxury and comfort combined. Highly recommended!',
-      image: 'https://randomuser.me/api/portraits/men/3.jpg'
+      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt pariatur officiis, molestias sit iure sunt voluptatibus.',
+      image: 'img/testimonial-2.jpg',
+      name: 'Client Name',
+      profession: 'Profession',
+      rating: 5
     },
     {
-      name: 'Carol White',
-      quote: 'A delightful experience from start to finish.',
-      image: 'https://randomuser.me/api/portraits/women/4.jpg'
+      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt pariatur officiis, molestias sit iure sunt voluptatibus.',
+      image: 'img/testimonial-3.jpg',
+      name: 'Client Name',
+      profession: 'Profession',
+      rating: 5
     }
-  ];
+  ]
 
 }

@@ -10,6 +10,7 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { TeamComponent } from './components/team/team.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { FaqsComponent } from './components/faqs/faqs.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'team', component: TeamComponent },
   { path: '404', component: NotfoundComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'faqs', component: FaqsComponent },
   { path: 'testimonial', component: TestimonialComponent },
 ];
 

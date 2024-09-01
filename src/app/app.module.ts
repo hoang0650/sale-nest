@@ -21,7 +21,7 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-
+import { NzRateModule } from 'ng-zorro-antd/rate';
 
 import { TestimonialComponent } from './components/testimonial/testimonial.component';
 import { ServiceComponent } from './components/service/service.component';
@@ -30,6 +30,7 @@ import { FeatureComponent } from './components/feature/feature.component';
 import { TeamComponent } from './components/team/team.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { FaqsComponent } from './components/faqs/faqs.component';
 registerLocaleData(en);
 
 @NgModule({
@@ -47,7 +48,8 @@ registerLocaleData(en);
     FeatureComponent,
     TeamComponent,
     NotfoundComponent,
-    ContactComponent
+    ContactComponent,
+    FaqsComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +58,8 @@ registerLocaleData(en);
     NzLayoutModule,
     NzCarouselModule,
     NzAvatarModule,
-    NzButtonModule
+    NzButtonModule,
+    NzRateModule
   ],
   providers: [
     provideClientHydration(),

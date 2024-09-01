@@ -1,3 +1,14 @@
 .testimonials-section {
   background-color: #eee;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.testimonial-avatar {
+  margin-bottom: 15px;
+}
+
+.testimonial-name {
+  font-size: 1.2rem;
+  margin: 10px 0;
 }
