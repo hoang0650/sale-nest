@@ -24,6 +24,8 @@
             $('.navbar').removeClass('sticky-top shadow-sm');
         }
     });
+      
+      
 
 
     // testimonial carousel

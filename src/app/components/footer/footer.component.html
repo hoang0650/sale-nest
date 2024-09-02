@@ -91,5 +91,29 @@
         </div>
         <!-- Copyright End -->
         <!-- Back to Top -->
-        <a href="#" class="btn btn-secondary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+        <!-- <a href="#" class="btn btn-secondary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a> -->
+        <div class="chatbot-toggle" (click)="toggleChat()">
+            <i class="fas fa-comments"></i>
+        </div>
+        
+        <div *ngIf="isChatVisible" class="chatbot-container">
+            <div class="chatbot-header">
+                <h3>Chat Bot</h3>
+                <button class="close-btn" (click)="toggleChat()">×</button>
+            </div>
+            <div class="chatbot-messages" id="chatMessages">
+                <div *ngFor="let message of messages" [ngClass]="{'user-message': message.sender === 'You', 'bot-message': message.sender === 'Bot'}" class="message">
+                    <div class="sender">{{ message.sender }}:</div>
+                    <div class="text">{{ message.text }}</div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" [(ngModel)]="newMessage" placeholder="Type your message...">
+                <button (click)="sendMessage()">Send</button>
+            </div>
+        </div>
+        
+        
+        
+        
        

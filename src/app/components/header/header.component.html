@@ -6,16 +6,16 @@
             <!-- <img src="img/logo.png" alt="Logo"> -->
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-        aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="fa fa-bars"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-                <a routerLink="/home" class="nav-item nav-link active">Home</a>
-                <a routerLink="/about-us" class="nav-item nav-link">About</a>
-                <a routerLink="/service" class="nav-item nav-link">Service</a>
-                <a routerLink="/blog" class="nav-item nav-link" >Blog</a>
-                <div class="nav-item dropdown" aria-current="page">
+                <a routerLink="/home" routerLinkActive="active" class="nav-item nav-link">Trang chủ</a>
+                <a routerLink="/about-us" routerLinkActive="active" class="nav-item nav-link">Giới thiệu</a>
+                <a routerLink="/service" routerLinkActive="active" class="nav-item nav-link">Công dụng</a>
+                <a routerLink="/blog" routerLinkActive="active" class="nav-item nav-link">Blog</a>
+                <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu m-0">
                         <a routerLink="/feature" class="dropdown-item">Our Feature</a>
@@ -26,19 +26,20 @@
                         <a routerLink="/404" class="dropdown-item">404 Page</a>
                     </div>
                 </div>
-                <a routerLink="/contact" class="nav-item nav-link">Contact</a>
+                <a routerLink="/contact" routerLinkActive="active" class="nav-item nav-link">Liên hệ</a>
             </div>
             <div class="d-none d-xl-flex me-3">
                 <div class="d-flex flex-column pe-3 border-end border-primary">
-                    <span class="text-primary">Get Free Delivery</span>
-                    <a href="tel:+4733378901"><span class="text-primary">Free: + 0123 456 7890</span></a>
+                    <span class="text-primary">Miễn phí vận chuyển</span>
+                    <a href="tel:+4733378901"><span class="text-primary">Liên hệ: 0972603267</span></a>
                 </div>
             </div>
-            <button class="btn btn-primary btn-md-square d-flex flex-shrink-0 mb-3 mb-lg-0 rounded-circle me-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button>
+            <button class="btn btn-primary btn-md-square d-flex flex-shrink-0 mb-3 mb-lg-0 rounded-circle me-3" data-bs-toggle="modal" data-bs-target="#searchModal">
+                <i class="fas fa-search"></i>
+            </button>
             <a href="" class="btn btn-primary rounded-pill d-inline-flex flex-shrink-0 py-2 px-4">Order Now</a>
         </div>
     </nav>
-
     
 </div>
 <!-- Navbar & Hero End -->
