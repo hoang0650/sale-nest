@@ -1,11 +1,11 @@
 <!-- Header Start -->
 <div class="container-fluid bg-breadcrumb">
     <div class="container text-center py-5" style="max-width: 900px;">
-        <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Our Testimonial</h4>
+        <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Đánh giá của khách hàng</h4>
         <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Pages</a></li>
-            <li class="breadcrumb-item active text-primary">Testimonial</li>
+            <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+            <!-- <li class="breadcrumb-item"><a href="#">Pages</a></li> -->
+            <li class="breadcrumb-item active text-primary">Phản hồi</li>
         </ol>    
     </div>
 </div>
@@ -13,22 +13,22 @@
 
 <!-- Testimonial Start -->
 <div class="testimonials-section">
-  <div class="text-center mx-auto pb-5" style="max-width: 600px;">
-      <h4 nz-typography class="text-primary">Testimonials</h4>
-      <h1 nz-typography class="display-5 text-capitalize mb-4">What Our Clients Say</h1>
-  </div>
-  <nz-carousel nzEffect="fade" nzAutoPlay nzDotPosition="bottom">
-      <div nz-carousel-content *ngFor="let testimonial of testimonials">
-          <div class="testimonial-item">
-              <p nz-typography class="mb-4">{{ testimonial.text }}</p>
-              <nz-avatar [nzSrc]="testimonial.image" nzShape="circle" [nzSize]="120"
-                  class="testimonial-avatar"></nz-avatar>
-              <h4 class="testimonial-name">{{ testimonial.name }}</h4>
-              <p nz-typography class="text-muted mb-3">{{ testimonial.profession }}</p>
-              <nz-rate [ngModel]="testimonial.rating" nzDisabled></nz-rate>
-          </div>
-          <br>
-      </div>
-  </nz-carousel>
+    <div class="text-center mx-auto pb-5" style="max-width: 600px;">
+        <h4 nz-typography class="text-primary">Phản hồi</h4>
+        <h1 nz-typography class="display-5 text-capitalize mb-4">Đánh giá của khách hàng</h1>
+    </div>
+    <nz-carousel nzEffect="fade" nzAutoPlay nzDotPosition="bottom">
+        <div nz-carousel-content *ngFor="let testimonial of testimonials">
+            <div class="testimonial-item">
+                <p nz-typography class="mb-4">{{ testimonial.text }}</p>
+                <nz-avatar [nzSrc]="testimonial.image" nzShape="circle" [nzSize]="120"
+                    class="testimonial-avatar"></nz-avatar>
+                <h4 class="testimonial-name">{{ testimonial.name }}</h4>
+                <p nz-typography class="text-muted mb-3">{{ testimonial.profession }}</p>
+                <nz-rate [ngModel]="testimonial.rating" nzDisabled></nz-rate>
+            </div>
+            <br>
+        </div>
+    </nz-carousel>
 </div>
 <!-- Testimonial End -->

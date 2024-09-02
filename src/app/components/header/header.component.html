@@ -1,7 +1,7 @@
 <!-- Navbar & Hero Start -->
 <div class="container-fluid position-relative p-0">
     <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-        <a href="" class="navbar-brand p-0">
+        <a href="" class="navbar-brand p-0" routerLink="/home">
             <h1 class="text-primary"><i class="fas fa-hand-holding-water me-3"></i>PHGroup</h1>
             <!-- <img src="img/logo.png" alt="Logo"> -->
         </a>
@@ -14,16 +14,16 @@
                 <a routerLink="/home" routerLinkActive="active" class="nav-item nav-link">Trang chủ</a>
                 <a routerLink="/about-us" routerLinkActive="active" class="nav-item nav-link">Giới thiệu</a>
                 <a routerLink="/service" routerLinkActive="active" class="nav-item nav-link">Công dụng</a>
-                <a routerLink="/blog" routerLinkActive="active" class="nav-item nav-link">Blog</a>
+                <a routerLink="/blog" routerLinkActive="active" class="nav-item nav-link">Tin tức</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Trang</a>
                     <div class="dropdown-menu m-0">
-                        <a routerLink="/feature" class="dropdown-item">Our Feature</a>
-                        <a routerLink="/product" class="dropdown-item">Our Product</a>
-                        <a routerLink="/team" class="dropdown-item">Our Team</a>
-                        <a routerLink="/testimonial" class="dropdown-item">Testimonial</a>
-                        <a routerLink="/faqs" class="dropdown-item">FAQs</a>
-                        <a routerLink="/404" class="dropdown-item">404 Page</a>
+                        <!-- <a routerLink="/feature" class="dropdown-item">Our Feature</a> -->
+                        <a routerLink="/product" class="dropdown-item">Sản phẩm</a>
+                        <!-- <a routerLink="/team" class="dropdown-item">Our Team</a> -->
+                        <a routerLink="/testimonial" class="dropdown-item">Phản hồi</a>
+                        <!-- <a routerLink="/faqs" class="dropdown-item">FAQs</a> -->
+                        <!-- <a routerLink="/404" class="dropdown-item">404</a> -->
                     </div>
                 </div>
                 <a routerLink="/contact" routerLinkActive="active" class="nav-item nav-link">Liên hệ</a>
@@ -37,7 +37,7 @@
             <button class="btn btn-primary btn-md-square d-flex flex-shrink-0 mb-3 mb-lg-0 rounded-circle me-3" data-bs-toggle="modal" data-bs-target="#searchModal">
                 <i class="fas fa-search"></i>
             </button>
-            <a href="" class="btn btn-primary rounded-pill d-inline-flex flex-shrink-0 py-2 px-4">Order Now</a>
+            <a href="" class="btn btn-primary rounded-pill d-inline-flex flex-shrink-0 py-2 px-4">Đặt ngay</a>
         </div>
     </nav>
     
@@ -48,12 +48,12 @@
     <div class="modal-dialog modal-fullscreen">
         <div class="modal-content rounded-0">
             <div class="modal-header">
-                <h4 class="modal-title mb-0" id="exampleModalLabel">Search by keyword</h4>
+                <h4 class="modal-title mb-0" id="exampleModalLabel">Nhập từ khoá mà bạn muốn tìm kiếm</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body d-flex align-items-center">
                 <div class="input-group w-75 mx-auto d-flex">
-                    <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
+                    <input type="search" class="form-control p-3" placeholder="Nhập từ khoá" aria-describedby="search-icon-1">
                     <span id="search-icon-1" class="input-group-text btn border p-3"><i class="fa fa-search text-white"></i></span>
                 </div>
             </div>

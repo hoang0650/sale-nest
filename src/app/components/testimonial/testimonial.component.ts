@@ -8,21 +8,21 @@ import { Component } from '@angular/core';
 export class TestimonialComponent {
   testimonials = [
     {
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt pariatur officiis, molestias sit iure sunt voluptatibus.',
+      text: 'Sản phẩm tốt, giá cả hợp lý.',
       image: 'img/testimonial-1.jpg',
       name: 'Client Name',
       profession: 'Profession',
       rating: 5
     },
     {
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt pariatur officiis, molestias sit iure sunt voluptatibus.',
+      text: 'Tôi rất thích sử dụng sản phẩm tại Yến sào Thanh Bình.',
       image: 'img/testimonial-2.jpg',
       name: 'Client Name',
       profession: 'Profession',
       rating: 5
     },
     {
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt pariatur officiis, molestias sit iure sunt voluptatibus.',
+      text: 'Tôi rất thích cách phục vụ chuyên nghiệp và giao hàng nhanh chóng.',
       image: 'img/testimonial-3.jpg',
       name: 'Client Name',
       profession: 'Profession',
