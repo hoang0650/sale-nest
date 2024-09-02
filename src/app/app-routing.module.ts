@@ -11,6 +11,8 @@ import { TeamComponent } from './components/team/team.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FaqsComponent } from './components/faqs/faqs.component';
+import { CartComponent } from './components/cart/cart.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
@@ -19,6 +21,8 @@ const routes: Routes = [
   { path: 'blog', component: BlogComponent },
   { path: 'feature', component: FeatureComponent },
   { path: 'product', component: ProductListComponent },
+  { path: 'cart', component: CartComponent },
+  { path: 'checkout', component: CheckoutComponent },
   { path: 'team', component: TeamComponent },
   { path: '404', component: NotfoundComponent },
   { path: 'contact', component: ContactComponent },

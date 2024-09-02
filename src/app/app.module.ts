@@ -31,6 +31,8 @@ import { TeamComponent } from './components/team/team.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FaqsComponent } from './components/faqs/faqs.component';
+import { CartComponent } from './components/cart/cart.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 registerLocaleData(en);
 
 @NgModule({
@@ -49,7 +51,9 @@ registerLocaleData(en);
     TeamComponent,
     NotfoundComponent,
     ContactComponent,
-    FaqsComponent
+    FaqsComponent,
+    CartComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
