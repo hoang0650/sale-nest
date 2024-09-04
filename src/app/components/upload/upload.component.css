@@ -1,0 +1,32 @@
+.container {
+    margin-top: 50px;
+  }
+  
+  .card {
+    border-radius: 10px;
+  }
+  
+  .card-header {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .form-control-file {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 5px;
+  }
+  
+  .btn-success {
+    width: 100%;
+  }
+  
+  .alert {
+    text-align: center;
+  }
+  
+  .img-fluid {
+    max-height: 300px;
+    object-fit: cover;
+  }
+  

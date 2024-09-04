@@ -1,0 +1,46 @@
+<!-- <input type="file" (change)="onFileSelected($event)" />
+<button (click)="fetchImage()">Get Image</button>
+<img *ngIf="imageSrc" [src]="imageSrc" alt="Uploaded Image" /> -->
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow-sm">
+          <div class="card-header bg-primary text-white">
+            <h5 class="card-title mb-0">Upload and Fetch Image</h5>
+          </div>
+          <div class="card-body">
+            <!-- Upload Form -->
+            <form>
+              <div class="form-group">
+                <label for="imageUpload" class="form-label">Select an image to upload</label>
+                <input type="file" class="form-control-file" id="imageUpload" (change)="onFileSelected($event)">
+              </div>
+              <button type="button" class="btn btn-success mt-3" (click)="onFileSelected($event)">Upload</button>
+            </form>
+            <div *ngIf="uploadMessage" class="alert alert-info mt-3" role="alert">
+              {{ uploadMessage }}
+            </div>
+            
+            <!-- Fetch Image -->
+            <div class="form-group mt-4">
+              <label for="imageIdInput" class="form-label">Enter Image ID to fetch</label>
+              <input type="text" class="form-control" id="imageIdInput" [(ngModel)]="inputImageId" placeholder="Enter image ID">
+              <button type="button" class="btn btn-primary mt-2" (click)="getImageById()">Fetch Image</button>
+            </div>
+            <div *ngIf="fetchMessage" class="alert alert-info mt-3" role="alert">
+              {{ fetchMessage }}
+            </div>
+            
+            <!-- Display Uploaded Image -->
+            <div *ngIf="imageSrc" class="mt-4 text-center">
+              <h6>Uploaded Image:</h6>
+              <img [src]="imageSrc" alt="Uploaded Image" class="img-fluid rounded shadow-sm" style="max-width: 100%; height: auto;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  

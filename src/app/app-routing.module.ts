@@ -13,6 +13,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { FaqsComponent } from './components/faqs/faqs.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { UploadComponent } from './components/upload/upload.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'cart', component: CartComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'team', component: TeamComponent },
+  { path: 'upload', component: UploadComponent },
   { path: '404', component: NotfoundComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'faqs', component: FaqsComponent },

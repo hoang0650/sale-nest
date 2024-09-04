@@ -33,6 +33,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { FaqsComponent } from './components/faqs/faqs.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { UploadComponent } from './components/upload/upload.component';
 registerLocaleData(en);
 
 @NgModule({
@@ -53,7 +54,8 @@ registerLocaleData(en);
     ContactComponent,
     FaqsComponent,
     CartComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    UploadComponent
   ],
   imports: [
     BrowserModule,
