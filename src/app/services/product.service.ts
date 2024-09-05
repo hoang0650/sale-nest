@@ -19,9 +19,9 @@ export class ProductService {
     // Cách 1: Data Set Cứng
     // Giả sử có một API hoặc dữ liệu từ server
     const fakeServerData = [
-      { id: 1, name: 'Yến tinh chế', description: 'Yến đã được tinh chế đảm bảo chất lượng và có thể chưng lên để sử dụng ngay', price: 3200000, image:'../../../assets/images/yendonghop1.jpg' },
-      { id: 2, name: 'Yến sơ chế', description: 'Yến chưa được qua tinh chế và cần phải lông trước khi chưng lên sử dụng', price: 2300000, image:'../../../assets/images/yendonghop1.jpg' },
-      { id: 3, name: 'Yến thô', description: 'Yến được hái trực tiếp từ tổ yến đảm bảo nguyên chất', price: 2000000, image:'../../../assets/images/yendonghop1.jpg' },
+      { id: 1, name: 'Yến tinh chế', description: 'Yến đã được tinh chế đảm bảo chất lượng và có thể chưng lên để sử dụng ngay', price: 3300000, image:'images/yendonghop1.jpg',quantity:1 },
+      { id: 2, name: 'Yến sơ chế', description: 'Yến chưa được qua tinh chế và cần phải lông trước khi chưng lên sử dụng', price: 2400000, image:'images/toyentho1.jpg',quantity:1 },
+      { id: 3, name: 'Yến thô', description: 'Yến được hái trực tiếp từ tổ yến đảm bảo nguyên chất', price: 2000000, image:'images/toyentho1.jpg',quantity:1 },
       // { id: 4, name: 'Product 1', description: 'Description 4' },
       // { id: 5, name: 'Product 2', description: 'Description 5' },
       // { id: 6, name: 'Product 3', description: 'Description 6' },
@@ -80,7 +80,7 @@ export class ProductService {
   getProductById(id: any): any {
     // Lấy sản phẩm từ dữ liệu hiện tại
     const currentProducts = this.productsSource.value;
-    return currentProducts.find(product => product.roomNumber === id);
+    return currentProducts.find(product => product.id === id);
   }
 
 

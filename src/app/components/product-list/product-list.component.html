@@ -6,18 +6,18 @@
             <h3 class="display-3 text-capitalize mb-3">Cam kết 100% yến nguyên chất</h3>
         </div>
         <div class="row g-4 justify-content-center">
-            <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.2s" *ngFor ="let product of productService.products$ | async"  (click)="onSelect(product.id)">
                 <div class="product-item">
-                    <img src="images/yendonghop1.jpg" class="img-fluid w-100 rounded-top" alt="Image">
+                    <img src="{{product.image}}" class="img-fluid w-100 rounded-top" alt="Image">
                     <div class="product-content bg-light text-center rounded-bottom p-4">
-                        <p>100gram 1 Hộp</p>
-                        <a href="#" class="h4 d-inline-block mb-3">Yến Tinh Chế</a>
-                        <p class="fs-4 text-primary mb-3">3.300.000</p>
-                        <a href="#" class="btn btn-secondary rounded-pill py-2 px-4">Read More</a>
+                        <a href="#" class="h4 d-inline-block mb-3">{{product.name}}</a>
+                        <p>{{product.description}}</p>
+                        <p class="fs-4 text-primary mb-3">{{product.price}}</p>
+                        <a class="btn btn-secondary rounded-pill py-2 px-4" (click)="addToCart(product)">Thêm giỏ hàng</a>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.4s">
+            <!-- <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.4s">
                 <div class="product-item">
                     <img src="images/toyentho1.jpg" class="img-fluid w-100 rounded-top" alt="Image">
                     <div class="product-content bg-light text-center rounded-bottom p-4">
@@ -27,7 +27,7 @@
                         <a href="#" class="btn btn-secondary rounded-pill py-2 px-4">Read More</a>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.6s">
                 <div class="product-item">
                     <img src="img/product-1.png" class="img-fluid w-100 rounded-top" alt="Image">

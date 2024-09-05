@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router  } from '@angular/router';
+import { CartService } from '../../services/cart.service';
 interface CartItem {
   name: string;
   price: number;
@@ -12,37 +13,33 @@ interface CartItem {
   templateUrl: './checkout.component.html',
   styleUrls: ['./checkout.component.css']
 })
-export class CheckoutComponent {
-  constructor(private http: HttpClient, private router: Router){}
-  cartItems: CartItem[] = [
-    {
-      name: 'Product 1',
-      price: 99.99,
-      quantity: 1
-    },
-    {
-      name: 'Product 2',
-      price: 49.99,
-      quantity: 2
-    }
-  ];
-
+export class CheckoutComponent implements OnInit {
+  constructor(private http: HttpClient, private activetedRoute: ActivatedRoute,private router: Router,private cartService: CartService){}
+  cartItems: any[] = [];
+  totalPrice: number = 0;
   billingInfo = {
     fullName: '',
     email: '',
     address: '',
-    city: '',
-    country: ''
+    phone: '',
   };
 
-  getTotalPrice(): number {
-    return this.cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+  ngOnInit(): void {
+    this.activetedRoute.queryParams.subscribe(params => {
+      const cartItemsString = params['cartItems'];
+      this.cartItems = cartItemsString ? JSON.parse(cartItemsString) : [];
+      this.totalPrice = params['totalPrice'] ? parseFloat(params['totalPrice']) : 0;
+    });
   }
 
   placeOrder() {
     // Xử lý khi người dùng nhấn "Place Order"
-    alert('Order placed successfully!');
+    alert('Thanh toán thành công!');
+    // Xóa tất cả các mặt hàng trong giỏ hàng
+    this.cartService.clearCart();
 
+    // Điều hướng đến trang chủ
+    this.router.navigate(['/home']);
     // const orderData = {
     //   userId: '12345', 
     //   ID của người dùng hiện tại, có thể lấy từ trạng thái đăng nhập

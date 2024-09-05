@@ -7,6 +7,7 @@ import { ServiceComponent } from './components/service/service.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { FeatureComponent } from './components/feature/feature.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { TeamComponent } from './components/team/team.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { ContactComponent } from './components/contact/contact.component';
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'blog', component: BlogComponent },
   { path: 'feature', component: FeatureComponent },
   { path: 'product', component: ProductListComponent },
+  { path: 'product/:id', component: ProductDetailComponent},
   { path: 'cart', component: CartComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'team', component: TeamComponent },

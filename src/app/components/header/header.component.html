@@ -38,9 +38,11 @@
             <button class="btn btn-primary btn-md-square d-flex flex-shrink-0 mb-3 mb-lg-0 rounded-circle me-3" data-bs-toggle="modal" data-bs-target="#searchModal">
                 <i class="fa fa-search"></i>
             </button>
-            <button routerLink="/cart" class="btn btn-primary btn-md-square d-flex flex-shrink-0 mb-3 mb-lg-0 rounded-circle me-3">
+            <button [routerLink]="['/cart']" class="btn btn-primary btn-md-square d-flex flex-shrink-0 mb-3 mb-lg-0 rounded-circle position-relative me-3">
                 <i class="fa fa-shopping-cart"></i>
+                <span class="cart-count">{{ cartItemCount }}</span> <!-- Hiển thị số lượng -->
             </button>
+              
         </div>
     </nav> 
 </div>

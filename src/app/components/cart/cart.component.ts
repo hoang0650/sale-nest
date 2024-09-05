@@ -1,57 +1,50 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-interface CartItem {
-  name: string;
-  description: string;
-  price: number;
-  quantity: number;
-  image: string;
-}
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
-export class CartComponent {
-  constructor(private router: Router) {}
-  cartItems: CartItem[] = [
-    {
-      name: 'Product 1',
-      description: 'Description of product 1',
-      price: 99.99,
-      quantity: 1,
-      image: 'https://via.placeholder.com/100'
-    },
-    {
-      name: 'Product 2',
-      description: 'Description of product 2',
-      price: 49.99,
-      quantity: 2,
-      image: 'https://via.placeholder.com/100'
-    }
-  ];
+export class CartComponent implements OnInit {
+  cartItems: any[] = [];
 
-  increaseQuantity(item: CartItem) {
-    item.quantity++;
+  constructor(private router: Router, private cartService: CartService) { }
+
+  ngOnInit(): void {
+    this.cartService.cartItems$.subscribe(items => {
+      this.cartItems = items;
+    });
   }
 
-  decreaseQuantity(item: CartItem) {
+  increaseQuantity(item: any) {
+    this.cartService.updateQuantity(item.name, item.quantity + 1);
+  }
+
+  decreaseQuantity(item: any) {
     if (item.quantity > 1) {
-      item.quantity--;
+      this.cartService.updateQuantity(item.name, item.quantity - 1);
     }
   }
 
-  removeItem(index: number) {
-    this.cartItems.splice(index, 1);
+  removeItem(name: string) {
+    this.cartService.removeFromCart(name);
   }
 
   getTotalPrice(): number {
-    return this.cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+    return this.cartService.getTotalPrice();
   }
 
   proceedToCheckout() {
-    this.router.navigate(['/checkout']);
+    const cartItemsString = JSON.stringify(this.cartItems);  // Chuyển đối tượng thành chuỗi JSON
+    const totalPrice = this.getTotalPrice();
+
+    this.router.navigate(['/checkout'], {
+      queryParams: {
+        cartItems: cartItemsString,
+        totalPrice: totalPrice
+      }
+    });
   }
-  
 }
