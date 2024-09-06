@@ -1,0 +1,61 @@
+<div *ngIf="selectedEvent" class="container my-5">
+  <div class="row justify-content-center">
+    <!-- Phần 7: Hiển thị title, description, video/image, và nút quay lại -->
+    <div class="col-md-7">
+      <!-- Tiêu đề -->
+      <h2 class="display-4 text-center mb-3">{{ selectedEvent.title }}</h2>
+
+      <!-- Mô tả (description) -->
+      <p class="lead text-center mb-4">{{ selectedEvent.description }}</p>
+
+      <!-- Video nếu có, nếu không thì hiển thị hình ảnh -->
+      <div *ngIf="selectedEvent.videoUrl; else imageTemplate" class="mb-4">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" [src]="selectedEvent.videoUrl | safeUrl" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <ng-template #imageTemplate>
+        <img [src]="selectedEvent.imageUrl" alt="Event Image" class="img-fluid mb-4 rounded">
+      </ng-template>
+
+      <!-- Nút quay lại -->
+      <div class="text-center">
+        <button class="btn btn-secondary mt-3" (click)="goBack()">Quay lại danh sách sự kiện</button>
+      </div>
+    </div>
+
+    <!-- Phần 3: Follow Fanpage và Blogs khác -->
+    <div class="col-md-3">
+      <!-- Follow Fanpage -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-body text-center p-3">
+          <h5 class="card-title mb-3">Follow Fanpage</h5>
+          <!-- Iframe nhúng fanpage với chiều rộng và chiều cao phù hợp -->
+          <iframe 
+          src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D61564932779639&tabs=timeline&width=380&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" 
+          width="100%" 
+          height="500" 
+          style="border:none;overflow:hidden" 
+          scrolling="no" 
+          frameborder="0" 
+          allowfullscreen="true" 
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+        </iframe>
+        </div>
+      </div>
+
+      <!-- Blogs khác -->
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Bài viết khác</h5>
+          <ul class="list-unstyled">
+            <li *ngFor="let blog of relatedEvents" class="mb-2">
+              <a href="#" class="text-decoration-none">{{ blog.title }}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -101,6 +101,7 @@
                 <div *ngFor="let message of messages" [ngClass]="{'user-message': message.sender === 'You', 'bot-message': message.sender === 'Bot'}" class="message">
                     <div class="sender">{{ message.sender }}:</div>
                     <div class="text">{{ message.text }}</div>
+                    <a class="text" *ngIf="message.link" [href]="message.link" target="_blank">{{ message.displayText }}</a>
                 </div>
             </div>
             <div class="chatbot-input">

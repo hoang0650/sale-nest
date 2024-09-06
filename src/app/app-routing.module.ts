@@ -15,12 +15,14 @@ import { FaqsComponent } from './components/faqs/faqs.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { UploadComponent } from './components/upload/upload.component';
+import { BlogDetailComponent } from './components/blog-detail/blog-detail.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'service', component: ServiceComponent },
   { path: 'blog', component: BlogComponent },
+  { path: 'blog-detail/:id', component: BlogDetailComponent },
   { path: 'feature', component: FeatureComponent },
   { path: 'product', component: ProductListComponent },
   { path: 'product/:id', component: ProductDetailComponent},

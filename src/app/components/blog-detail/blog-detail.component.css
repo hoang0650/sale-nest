@@ -1,0 +1,101 @@
+/* Đảm bảo iframe có chiều rộng đầy đủ và chiều cao hợp lý */
+.embed-responsive-item {
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+    border: none;
+}
+
+/* Căn giữa nội dung */
+.text-center {
+    text-align: center;
+}
+
+/* Tùy chỉnh kích thước và kiểu chữ cho tiêu đề */
+h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+/* Điều chỉnh khoảng cách giữa các phần tử */
+.mb-3 {
+    margin-bottom: 1.5rem;
+}
+
+.mb-4 {
+    margin-bottom: 2rem;
+}
+
+/* Căn giữa nội dung bên trong các thẻ card */
+.card-body {
+    text-align: center;
+}
+
+/* Tùy chỉnh các nút với biểu tượng (icon) */
+.btn i {
+    margin-right: 0.5rem;
+}
+
+/* Màu sắc nút theo mạng xã hội */
+.btn-primary {
+    background-color: #4267B2; /* Facebook màu xanh */
+}
+
+.btn-danger {
+    background-color: #E1306C; /* Instagram màu hồng đậm */
+}
+
+.btn-danger:last-child {
+    background-color: #FF0000; /* YouTube màu đỏ */
+}
+
+/* Danh sách bài viết khác */
+.list-unstyled {
+    text-align: left;
+}
+
+/* Khoảng cách giữa các mục trong danh sách */
+.list-unstyled li {
+    margin-bottom: 0.75rem;
+}
+
+/* Tùy chỉnh màu sắc liên kết */
+.list-unstyled a {
+    color: #007bff;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+/* Hiệu ứng khi hover vào liên kết */
+.list-unstyled a:hover {
+    text-decoration: underline;
+}
+
+/* Card styling */
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Đảm bảo các phần card nằm giữa và cân đối */
+.card-body {
+    padding: 20px;
+}
+
+/* Tiêu đề card */
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Đảm bảo các nút có chiều rộng bằng nhau */
+.btn {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+
+
+

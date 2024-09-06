@@ -34,6 +34,9 @@ import { FaqsComponent } from './components/faqs/faqs.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { UploadComponent } from './components/upload/upload.component';
+import { SafeUrlPipe } from './pipes/safe-url.pipe';
+import { BlogDetailComponent } from './components/blog-detail/blog-detail.component';
+
 registerLocaleData(en);
 
 @NgModule({
@@ -55,7 +58,10 @@ registerLocaleData(en);
     FaqsComponent,
     CartComponent,
     CheckoutComponent,
-    UploadComponent
+    UploadComponent,
+    SafeUrlPipe,
+    BlogDetailComponent,
+
   ],
   imports: [
     BrowserModule,
