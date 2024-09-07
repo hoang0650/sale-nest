@@ -1,12 +1,7 @@
 import { Component, OnInit} from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { CheckoutService } from '../../services/checkout.service';
 import { ActivatedRoute, Router  } from '@angular/router';
 import { CartService } from '../../services/cart.service';
-interface CartItem {
-  name: string;
-  price: number;
-  quantity: number;
-}
 
 @Component({
   selector: 'app-checkout',
@@ -14,7 +9,7 @@ interface CartItem {
   styleUrls: ['./checkout.component.css']
 })
 export class CheckoutComponent implements OnInit {
-  constructor(private http: HttpClient, private activetedRoute: ActivatedRoute,private router: Router,private cartService: CartService){}
+  constructor(private checkoutService: CheckoutService, private activetedRoute: ActivatedRoute,private router: Router,private cartService: CartService){}
   cartItems: any[] = [];
   totalPrice: number = 0;
   billingInfo = {
@@ -33,30 +28,35 @@ export class CheckoutComponent implements OnInit {
   }
 
   placeOrder() {
-    // Xử lý khi người dùng nhấn "Place Order"
-    alert('Thanh toán thành công!');
-    // Xóa tất cả các mặt hàng trong giỏ hàng
-    this.cartService.clearCart();
-
-    // Điều hướng đến trang chủ
-    this.router.navigate(['/home']);
-    // const orderData = {
-    //   userId: '12345', 
-    //   ID của người dùng hiện tại, có thể lấy từ trạng thái đăng nhập
-    //   cartItems: this.cartItems,
-    //   billingInfo: this.billingInfo
-    // };
-
-    // this.http.post('/api/checkout', orderData).subscribe(
-    //   response => {
-    //     alert('Order placed successfully!');
-    //     this.router.navigate(['/thank-you']); 
-    //     Chuyển hướng tới trang cảm ơn
-    //   },
-    //   error => {
-    //     console.error('Error placing order:', error);
-    //     alert('Failed to place order. Please try again.');
-    //   }
-    // );
+    const orderDate = new Date();
+    // const formattedDate = `${this.padZero(orderDate.getDate())}/${this.padZero(orderDate.getMonth() + 1)}/${orderDate.getFullYear()}`;
+    const orderData = {
+      ...this.billingInfo,
+      items: this.cartItems,
+      totalPrice: this.totalPrice,
+      orderId: this.generateOrderId(),
+      // createdAt: formattedDate
+    };
+    this.checkoutService.placeOrder(orderData).subscribe(
+      (response) => {
+        console.log('Order placed successfully', response);
+        alert('Thanh toán thành công!');
+        // Xóa tất cả các mặt hàng trong giỏ hàng
+        this.cartService.clearCart();
+        // Điều hướng đến trang chủ
+        this.router.navigate(['/home']);
+      },
+      (error) => {
+        console.error('Error placing order', error);
+      }
+    );
   }
+
+  generateOrderId(): string {
+    return 'ORD' + Math.floor(Math.random() * 1000000).toString();
+  }
+
+  // padZero(value: number): string {
+  //   return value < 10 ? `0${value}` : value.toString();
+  // }
 }
