@@ -1,0 +1,110 @@
+/* Container for product detail page */
+.product-detail-container {
+  background-color: #f9f9f9;
+}
+
+/* Logo and Header */
+.hotel-logo {
+  width: 80px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.header-logo-title {
+  margin-bottom: 30px;
+}
+
+.animated-logo {
+  animation: pulse 2s infinite;
+}
+
+.text-gradient {
+  background: linear-gradient(45deg, #ff4e50, #f9d423);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.header-decoration {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 100px;
+  height: 4px;
+  background-color: #ff4e50;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+/* Product Image and Overlay */
+.product-image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-image {
+  transition: transform 0.5s ease;
+  width: 100%;
+  height: auto;
+}
+
+.product-image-wrapper:hover .product-image {
+  transform: scale(1.1);
+}
+
+/* Discount Badge */
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 3px;
+  z-index: 3;
+  transform: rotate(-10deg);
+}
+
+/* Price Information */
+.price-container {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.product-discounted-price {
+  font-size: 1.5rem;
+  color: #ff4e50;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.product-original-price {
+  font-size: 1.2rem;
+  color: #999;
+  text-decoration: line-through;
+}
+
+/* Booking Form */
+.booking-form {
+  margin-top: 20px;
+}
+
+.booking-form .form-label {
+  font-weight: bold;
+}
+
+.booking-form .form-select {
+  border-radius: 4px;
+}
+
+.booking-form .btn-primary {
+  background-color: #ff4e50;
+  border-color: #ff4e50;
+}
+
+.booking-form .btn-primary:hover {
+  background-color: #f44336;
+  border-color: #f44336;
+}

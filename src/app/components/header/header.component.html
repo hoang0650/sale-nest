@@ -1,9 +1,8 @@
 <!-- Navbar & Hero Start -->
 <div class="container-fluid position-relative p-0">
     <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-        <a href="" class="navbar-brand p-0" routerLink="/home">
-            <h1 class="text-primary"><i class="fas fa-hand-holding-water me-3"></i>PHGroup</h1>
-            <!-- <img src="img/logo.png" alt="Logo"> -->
+        <a class="navbar-brand p-0" routerLink="/home">
+            <img src="images/logoyensao.jpg" alt="Logo" class="navbar-logo">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,18 +15,6 @@
                 <a routerLink="/product" routerLinkActive="active" class="nav-item nav-link">Sản phẩm</a>
                 <a routerLink="/service" routerLinkActive="active" class="nav-item nav-link">Công dụng</a>
                 <a routerLink="/blog" routerLinkActive="active" class="nav-item nav-link">Tin tức</a>
-                <!-- <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Trang</a>
-                    <div class="dropdown-menu m-0">
-                        <a routerLink="/feature" class="dropdown-item">Our Feature</a>
-                        <a routerLink="/product" class="dropdown-item">Sản phẩm</a>
-                        <a routerLink="/team" class="dropdown-item">Our Team</a>
-                        <a routerLink="/testimonial" class="dropdown-item">Phản hồi</a>
-                        <a routerLink="/faqs" class="dropdown-item">FAQs</a>
-                        <a routerLink="/404" class="dropdown-item">404</a>
-                    </div>
-                </div>
-                <a routerLink="/contact" routerLinkActive="active" class="nav-item nav-link">Liên hệ</a> -->
             </div>
             <div class="d-none d-xl-flex me-3">
                 <div class="d-flex flex-column pe-3 border-end border-primary">
@@ -40,12 +27,12 @@
             </button>
             <button [routerLink]="['/cart']" class="btn btn-primary btn-md-square d-flex flex-shrink-0 mb-3 mb-lg-0 rounded-circle position-relative me-3">
                 <i class="fa fa-shopping-cart"></i>
-                <span class="cart-count">{{ cartItemCount }}</span> <!-- Hiển thị số lượng -->
+                <span class="cart-count">{{ cartItemCount }}</span>
             </button>
-              
         </div>
-    </nav> 
+    </nav>
 </div>
+
 <!-- Navbar & Hero End -->
  <!-- Modal Search Start -->
  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
