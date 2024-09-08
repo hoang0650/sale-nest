@@ -1,37 +1,68 @@
 <!-- Navbar & Hero Start -->
 <div class="container-fluid position-relative p-0">
     <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-        <a class="navbar-brand p-0" routerLink="/home">
-            <img src="images/logoyensao.jpg" alt="Logo" class="navbar-logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="fa fa-bars"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto py-0">
-                <a routerLink="/home" routerLinkActive="active" class="nav-item nav-link">Trang chủ</a>
-                <a routerLink="/about-us" routerLinkActive="active" class="nav-item nav-link">Giới thiệu</a>
-                <a routerLink="/product" routerLinkActive="active" class="nav-item nav-link">Sản phẩm</a>
-                <a routerLink="/service" routerLinkActive="active" class="nav-item nav-link">Công dụng</a>
-                <a routerLink="/blog" routerLinkActive="active" class="nav-item nav-link">Tin tức</a>
-            </div>
-            <div class="d-none d-xl-flex me-3">
-                <div class="d-flex flex-column pe-3 border-end border-primary">
-                    <span class="text-primary">Miễn phí vận chuyển</span>
-                    <a href="tel:+4733378901"><span class="text-primary">Liên hệ: 0972603267</span></a>
-                </div>
-            </div>
-            <button class="btn btn-primary btn-md-square d-flex flex-shrink-0 mb-3 mb-lg-0 rounded-circle me-3" data-bs-toggle="modal" data-bs-target="#searchModal">
-                <i class="fa fa-search"></i>
-            </button>
-            <button [routerLink]="['/cart']" class="btn btn-primary btn-md-square d-flex flex-shrink-0 mb-3 mb-lg-0 rounded-circle position-relative me-3">
-                <i class="fa fa-shopping-cart"></i>
-                <span class="cart-count">{{ cartItemCount }}</span>
-            </button>
+      <!-- Logo -->
+      <a class="navbar-brand p-0" routerLink="/home">
+        <img src="images/logoyensao.jpg" alt="Logo" style="width: 100px; height: 100px;">
+      </a>
+  
+      <!-- Nút toggle cho mobile -->
+      <button class="navbar-toggler" type="button" (click)="toggleMenu()">
+        <span class="fa fa-bars"></span>
+      </button>
+  
+      <!-- Menu collapse trên mobile -->
+      <div *ngIf="isMobile && menuOpen" class="navbar-collapse">
+        <div class="navbar-nav ms-auto py-0">
+          <a routerLink="/home" routerLinkActive="active" class="nav-item nav-link">Trang chủ</a>
+          <a routerLink="/about-us" routerLinkActive="active" class="nav-item nav-link">Giới thiệu</a>
+          <a routerLink="/product" routerLinkActive="active" class="nav-item nav-link">Sản phẩm</a>
+          <a routerLink="/service" routerLinkActive="active" class="nav-item nav-link">Công dụng</a>
+          <a routerLink="/blog" routerLinkActive="active" class="nav-item nav-link">Tin tức</a>
         </div>
+        <div class="d-none d-xl-flex me-3">
+            <div class="d-flex flex-column pe-3 border-end border-primary">
+                <span class="text-primary">Miễn phí vận chuyển</span>
+                <a href="tel:+4733378901"><span class="text-primary">Liên hệ: 0972603267</span></a>
+            </div>
+        </div>
+        <button class="btn btn-primary btn-md-square d-flex flex-shrink-0 mb-3 mb-lg-0 rounded-circle me-3" data-bs-toggle="modal" data-bs-target="#searchModal">
+            <i class="fa fa-search"></i>
+        </button>
+        <button [routerLink]="['/cart']" class="btn btn-primary btn-md-square d-flex flex-shrink-0 mb-3 mb-lg-0 rounded-circle position-relative me-3">
+            <i class="fa fa-shopping-cart"></i>
+            <span class="cart-count">{{ cartItemCount }}</span> <!-- Hiển thị số lượng -->
+        </button>
+      </div>
+  
+      <!-- Menu mở trên desktop (không collapse) -->
+      <div *ngIf="!isMobile" class="navbar-collapse">
+        <div class="navbar-nav ms-auto py-0">
+          <a routerLink="/home" routerLinkActive="active" class="nav-item nav-link">Trang chủ</a>
+          <a routerLink="/about-us" routerLinkActive="active" class="nav-item nav-link">Giới thiệu</a>
+          <a routerLink="/product" routerLinkActive="active" class="nav-item nav-link">Sản phẩm</a>
+          <a routerLink="/service" routerLinkActive="active" class="nav-item nav-link">Công dụng</a>
+          <a routerLink="/blog" routerLinkActive="active" class="nav-item nav-link">Tin tức</a>
+        </div>
+        <div class="d-none d-xl-flex me-3">
+            <div class="d-flex flex-column pe-3 border-end border-primary">
+                <span class="text-primary">Miễn phí vận chuyển</span>
+                <a href="tel:+4733378901"><span class="text-primary">Liên hệ: 0972603267</span></a>
+            </div>
+        </div>
+        <button class="btn btn-primary btn-md-square d-flex flex-shrink-0 mb-3 mb-lg-0 rounded-circle me-3" data-bs-toggle="modal" data-bs-target="#searchModal">
+            <i class="fa fa-search"></i>
+        </button>
+        <button [routerLink]="['/cart']" class="btn btn-primary btn-md-square d-flex flex-shrink-0 mb-3 mb-lg-0 rounded-circle position-relative me-3">
+            <i class="fa fa-shopping-cart"></i>
+            <span class="cart-count">{{ cartItemCount }}</span> <!-- Hiển thị số lượng -->
+        </button>
+      </div>
     </nav>
-</div>
+  </div>
+  
+
+
 
 <!-- Navbar & Hero End -->
  <!-- Modal Search Start -->

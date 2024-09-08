@@ -1,13 +1,3 @@
-.navbar-logo {
-  height: 100%; /* Chiều cao bao phủ hết thanh điều hướng */
-  width: 100%; /* Duy trì tỷ lệ khung hình của logo */
-  max-height: 70px; /* Điều chỉnh chiều cao tối đa để phù hợp với navbar, có thể thay đổi */
-  object-fit: contain; /* Đảm bảo hình ảnh không bị bóp méo */
-}
-
-.navbar {
-  height: 70px; /* Đặt chiều cao của navbar, có thể điều chỉnh tùy theo thiết kế */
-}
 
 /* Căn chỉnh icon và đặt vị trí của cart-count */
 button {
@@ -32,5 +22,15 @@ button {
     justify-content: center;
     align-items: center;
     min-width: 18px;
+}
+
+.navbar-collapse {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navbar-collapse {
+    display: block;
+  }
 }
   
