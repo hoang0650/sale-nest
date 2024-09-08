@@ -3,11 +3,81 @@
         <div class="product-item">
             <img src="{{product.image}}" class="img-fluid w-100 rounded-top" alt="Image">
             <div class="product-content bg-light text-center rounded-bottom p-4">
-                <a href="#" class="h4 d-inline-block mb-3">{{product.name}}</a>
+                <a class="h4 d-inline-block mb-3">{{product.name}}</a>
                 <p>{{product.description}}</p>
                 <p class="fs-4 text-primary mb-3">{{product.price}}</p>
-                <a href="#" class="btn btn-secondary rounded-pill py-2 px-4">Thêm giỏ hàng</a>
+                <a class="btn btn-secondary rounded-pill py-2 px-4" (click)="addToCart(product)">Thêm giỏ hàng</a>
             </div>
         </div>
     </div>
 </div>
+
+<!-- <div class="container my-4"></div>
+<div class="product-detail-container border-0 rounded-3 shadow-lg p-4">
+    <div class="header-logo-title d-flex align-items-center justify-content-center position-relative mb-5">
+        <img src="images/logoyensao.jpg" alt="Hotel Logo" class="hotel-logo animated-logo">
+        <h2 class="mx-3 text-uppercase text-gradient">Yến Sào Thanh Bình</h2>
+        <div class="header-decoration"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <nz-carousel>
+                <div nz-carousel-content>
+                    <img [src]="{{product.image}}" class="img-fluid product-image" alt="Room Image">
+                </div>
+            </nz-carousel>
+            <div class="discount-badge">
+                <span>{{ product?.discount }}% OFF</span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="booking-form">
+                <h4 class="mb-3">Thông tin sản phẩm</h4>
+                <div class="product-details">
+                    <h3 class="product-title">{{product.name}}</h3>
+                    <p class="product-description">{{product.description}}</p>
+                    <div class="price-container mb-3">
+                        <p class="product-discounted-price">{{product.price | currency}}</p>
+                        <p class="product-original-price">{{product.price | currency}}</p>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100" (click)="addToCart(product)">Thêm giỏ
+                        hàng</button>
+                </div>
+                <h4 class="mb-3">Book This Room</h4>
+                <button type="submit" class="btn btn-primary w-100">Book Now</button>
+                <form>
+                    <div class="mb-3">
+                        <label for="checkin" class="form-label">Check-in Date</label>
+                        <input type="date" id="checkin" class="form-control" [(ngModel)]="booking.checkinDate"
+                            name="checkinDate" required>
+                        <input type="date" id="checkin" class="form-control" name="checkinDate" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="checkout" class="form-label">Check-out Date</label>
+                        <input type="date" id="checkout" class="form-control" [(ngModel)]="booking.checkoutDate"
+                            name="checkoutDate" required>
+                        <input type="date" id="checkout" class="form-control" name="checkoutDate" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="guests" class="form-label">Number of Guests</label>
+                        <input type="number" id="guests" class="form-control" [(ngModel)]="booking.guests" name="guests"
+                            min="1" max="{{product?.maxcount}}" required>
+                        <input type="number" id="guests" class="form-control" name="guests" min="1"
+                            max="{{product?.maxcount}}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Payment Method</label>
+                        <select class="form-select" [(ngModel)]="booking.paymentMethod" name="paymentMethod" required>
+                            <select class="form-select" name="paymentMethod" required>
+                                <option value="" disabled>Select payment method</option>
+                                <option value="creditCard">Credit Card</option>
+                                <option value="paypal">PayPal</option>
+                                <option value="bankTransfer">Bank Transfer</option>
+                            </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Book Now</button>
+                </form>
+            </div>
+        </div>
+    </div> -->

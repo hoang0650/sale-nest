@@ -17,7 +17,7 @@ export class FooterComponent {
   sendMessage() {
     if (this.newMessage.trim() !== '') {
       // Thêm tin nhắn của người dùng vào danh sách
-      this.messages.push({ sender: 'You', text: this.newMessage });
+      this.messages.push({ sender: 'Bạn', text: this.newMessage });
       this.newMessage = '';
 
       // Giả lập phản hồi từ bot sau 1 giây

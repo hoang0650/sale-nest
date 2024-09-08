@@ -9,23 +9,23 @@ export class HomeComponent {
   testimonials = [
     {
       text: 'Sản phẩm tốt, giá cả hợp lý.',
-      image: 'img/testimonial-1.jpg',
-      name: 'Client Name',
-      profession: 'Profession',
+      image: 'https://via.placeholder.com/150',
+      name: 'Hà Nguyễn',
+      profession: 'Thái Bình',
       rating: 5
     },
     {
       text: 'Tôi rất thích sử dụng sản phẩm tại Yến sào Thanh Bình.',
-      image: 'img/testimonial-2.jpg',
-      name: 'Client Name',
-      profession: 'Profession',
+      image: 'https://via.placeholder.com/150',
+      name: 'Hoàng Nguyễn',
+      profession: 'Hồ Chí Minh',
       rating: 5
     },
     {
       text: 'Tôi rất thích cách phục vụ chuyên nghiệp và giao hàng nhanh chóng.',
-      image: 'img/testimonial-3.jpg',
-      name: 'Client Name',
-      profession: 'Profession',
+      image: 'https://via.placeholder.com/150',
+      name: 'Minh Nguyễn',
+      profession: 'Dĩ An',
       rating: 5
     }
   ]
