@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class UploadService {
 
-  private apiUrl = 'http://localhost:3000/api/upload/image';
+  private apiUrl = 'https://sale-nest-api.onrender.com/api/upload/image';
 
   constructor(private http: HttpClient) {}
 
