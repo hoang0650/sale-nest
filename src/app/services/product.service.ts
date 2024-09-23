@@ -19,9 +19,9 @@ export class ProductService {
     // Cách 1: Data Set Cứng
     // Giả sử có một API hoặc dữ liệu từ server
     const fakeServerData = [
-      { id: 1, name: 'Yến thô', description: 'Tổ Yến thô được hái trực tiếp từ nhà yến đảm bảo nguyên chất chưa qua bất kỳ quy trình xử lý nào. Tổ yến vẫn còn nguyên lông và các tạp chất tự nhiên, đảm bảo giữ trọn vẹn dưỡng chất ban đầu. Người mua sẽ cần sơ chế và làm sạch yến trước khi sử dụng.', price: 2000000, image:'images/yen-tho.jpg',quantity:1 },
-      { id: 2, name: 'Yến sơ chế', description: 'Tổ Yến sơ chế đã được làm sạch một phần, loại bỏ lông và tạp chất, nhưng vẫn giữ nguyên cấu trúc sợi yến tự nhiên. Người mua chỉ cần sơ chế lại một chút trước khi sử dụng, tiết kiệm thời gian hơn so với yến thô.', price: 2400000, image:'images/yen-so-che.jpg',quantity:1 },
-      { id: 3, name: 'Yến tinh chế', description: 'Tổ Yến tinh chế đã được làm sạch hoàn toàn, loại bỏ lông, bụi bẩn và các tạp chất khác. Sợi yến được tách nhỏ và đúc lại thành dạng tổ yến nguyên vẹn. Loại yến này không cần sơ chế thêm, có thể sử dụng ngay.', price: 3300000, image:'images/yen-tinh-che.jpg',quantity:1 },
+      { id: 1, name: 'Yến thô - 100gr', description: 'Tổ Yến thô được hái trực tiếp từ nhà yến đảm bảo nguyên chất chưa qua bất kỳ quy trình xử lý nào. Tổ yến vẫn còn nguyên lông và các tạp chất tự nhiên. Người mua sẽ cần sơ chế và làm sạch yến trước khi sử dụng.', price: 2000000, image:'images/yen-tho.jpg',quantity:1 },
+      { id: 2, name: 'Yến sơ chế - 100gr', description: 'Tổ Yến sơ chế đã được làm sạch một phần, loại bỏ lông và tạp chất, nhưng vẫn giữ nguyên cấu trúc sợi yến tự nhiên. Người mua chỉ cần sơ chế lại một chút trước khi sử dụng, tiết kiệm thời gian hơn so với yến thô.', price: 2400000, image:'images/yen-so-che.jpg',quantity:1 },
+      { id: 3, name: 'Yến tinh chế - 100gr', description: 'Tổ Yến tinh chế đã được làm sạch hoàn toàn, loại bỏ lông, bụi bẩn và các tạp chất khác. Sợi yến được tách nhỏ và đúc lại thành dạng tổ yến nguyên vẹn. Loại yến này không cần sơ chế thêm, có thể sử dụng ngay.', price: 3300000, image:'images/yen-tinh-che.jpg',quantity:1 },
       // { id: 4, name: 'Product 1', description: 'Description 4' },
       // { id: 5, name: 'Product 2', description: 'Description 5' },
       // { id: 6, name: 'Product 3', description: 'Description 6' },
