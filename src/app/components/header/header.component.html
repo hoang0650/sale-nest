@@ -1,85 +1,114 @@
 <!-- Navbar & Hero Start -->
 <div class="container-fluid position-relative p-0">
-    <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-      <!-- Logo -->
-      <a class="navbar-brand p-0" routerLink="/home">
-        <img src="images/logoyensao.jpg" alt="Logo" style="width: 100px; height: 100px;">
-      </a>
-  
-      <!-- Nút toggle cho mobile -->
-      <button class="navbar-toggler" type="button" (click)="toggleMenu()">
-        <span class="fa fa-bars"></span>
+  <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+    <!-- Logo -->
+    <a class="navbar-brand p-0" routerLink="/home">
+      <img src="images/logoyensao.jpg" alt="Logo" style="width: 100px; height: 100px;">
+    </a>
+
+    <!-- Nút toggle cho mobile -->
+    <button class="navbar-toggler" type="button" (click)="toggleMenu()">
+      <span class="fa fa-bars"></span>
+    </button>
+
+    <!-- Menu collapse trên mobile -->
+    <div *ngIf="menuOpen" class="navbar-collapse">
+      <div class="navbar-nav ms-auto py-0">
+        <a routerLink="/home" routerLinkActive="active" class="nav-item nav-link">{{ 'HOME' | translate }}</a>
+        <a routerLink="/about-us" routerLinkActive="active" class="nav-item nav-link">{{ 'ABOUT_US' | translate }}</a>
+        <a routerLink="/product" routerLinkActive="active" class="nav-item nav-link">{{ 'PRODUCT' | translate }}</a>
+        <a routerLink="/service" routerLinkActive="active" class="nav-item nav-link">{{ 'SERVICE' | translate }}</a>
+        <a routerLink="/blog" routerLinkActive="active" class="nav-item nav-link">{{ 'BLOG' | translate }}</a>
+      </div>
+      <div class="d-none d-xl-flex me-3">
+        <div class="d-flex flex-column pe-3 border-end border-primary">
+          <span class="text-primary">{{ 'FREE_SHIPPING' | translate }}</span>
+          <a href="tel:+4733378901"><span class="text-primary">{{ 'CONTACT' | translate }}: 0972603267</span></a>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-md-square d-flex flex-shrink-0 mb-3 mb-lg-0 rounded-circle me-3"
+        data-bs-toggle="modal" data-bs-target="#searchModal">
+        <i class="fa fa-search"></i>
       </button>
-  
-      <!-- Menu collapse trên mobile -->
-      <div *ngIf="menuOpen" class="navbar-collapse">
-        <div class="navbar-nav ms-auto py-0">
-          <a routerLink="/home" routerLinkActive="active" class="nav-item nav-link">Trang chủ</a>
-          <a routerLink="/about-us" routerLinkActive="active" class="nav-item nav-link">Giới thiệu</a>
-          <a routerLink="/product" routerLinkActive="active" class="nav-item nav-link">Sản phẩm</a>
-          <a routerLink="/service" routerLinkActive="active" class="nav-item nav-link">Công dụng</a>
-          <a routerLink="/blog" routerLinkActive="active" class="nav-item nav-link">Tin tức</a>
-        </div>
-        <div class="d-none d-xl-flex me-3">
-            <div class="d-flex flex-column pe-3 border-end border-primary">
-                <span class="text-primary">Miễn phí vận chuyển</span>
-                <a href="tel:+4733378901"><span class="text-primary">Liên hệ: 0972603267</span></a>
-            </div>
-        </div>
-        <button class="btn btn-primary btn-md-square d-flex flex-shrink-0 mb-3 mb-lg-0 rounded-circle me-3" data-bs-toggle="modal" data-bs-target="#searchModal">
-            <i class="fa fa-search"></i>
-        </button>
-        <button [routerLink]="['/cart']" class="btn btn-primary btn-md-square d-flex flex-shrink-0 mb-3 mb-lg-0 rounded-circle position-relative me-3">
-            <i class="fa fa-shopping-cart"></i>
-            <span class="cart-count">{{ cartItemCount }}</span> <!-- Hiển thị số lượng -->
-        </button>
+      <button [routerLink]="['/cart']"
+        class="btn btn-primary btn-md-square d-flex flex-shrink-0 mb-3 mb-lg-0 rounded-circle position-relative me-3">
+        <i class="fa fa-shopping-cart"></i>
+        <span class="cart-count">{{ cartItemCount }}</span> <!-- Hiển thị số lượng -->
+      </button>
+      <div class="dropdown">
+        <a nz-dropdown [nzDropdownMenu]="menu">
+        {{ 'LANGUAGE' | translate }} <i nz-icon nzType="down"></i>
+        </a>
+        <div class="dropdown">
+          <a nz-dropdown [nzDropdownMenu]="menu">
+            <i nz-icon nzType="global" class="anticon"></i>{{ currentLanguage === 'vi' ? 'VI' : 'EN' }}<i nz-icon nzType="down"></i>
+          </a>
+          <nz-dropdown-menu #menu="nzDropdownMenu">
+            <ul nz-menu nzSelectable class="pt-5">
+              <li nz-menu-item (click)="selectLanguage('en')">English</li>
+              <li nz-menu-item (click)="selectLanguage('vi')">Tiếng Việt</li>
+            </ul>
+          </nz-dropdown-menu>
+        </div>     
       </div>
-  
-      <!-- Menu mở trên desktop (không collapse) -->
-      <div *ngIf="!isMobile" class="navbar-collapse">
-        <div class="navbar-nav ms-auto py-0">
-          <a routerLink="/home" routerLinkActive="active" class="nav-item nav-link">Trang chủ</a>
-          <a routerLink="/about-us" routerLinkActive="active" class="nav-item nav-link">Giới thiệu</a>
-          <a routerLink="/product" routerLinkActive="active" class="nav-item nav-link">Sản phẩm</a>
-          <a routerLink="/service" routerLinkActive="active" class="nav-item nav-link">Công dụng</a>
-          <a routerLink="/blog" routerLinkActive="active" class="nav-item nav-link">Tin tức</a>
-        </div>
-        <div class="d-none d-xl-flex me-3">
-            <div class="d-flex flex-column pe-3 border-end border-primary">
-                <span class="text-primary">Miễn phí vận chuyển</span>
-                <a href="tel:+4733378901"><span class="text-primary">Liên hệ: 0972603267</span></a>
-            </div>
-        </div>
-        <button class="btn btn-primary btn-md-square d-flex flex-shrink-0 mb-3 mb-lg-0 rounded-circle me-3" data-bs-toggle="modal" data-bs-target="#searchModal">
-            <i class="fa fa-search"></i>
-        </button>
-        <button [routerLink]="['/cart']" class="btn btn-primary btn-md-square d-flex flex-shrink-0 mb-3 mb-lg-0 rounded-circle position-relative me-3">
-            <i class="fa fa-shopping-cart"></i>
-            <span class="cart-count">{{ cartItemCount }}</span> <!-- Hiển thị số lượng -->
-        </button>
-      </div>
-    </nav>
-  </div>
-  
-
-
-
-<!-- Navbar & Hero End -->
- <!-- Modal Search Start -->
- <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-fullscreen">
-        <div class="modal-content rounded-0">
-            <div class="modal-header">
-                <h4 class="modal-title mb-0" id="exampleModalLabel">Nhập từ khoá mà bạn muốn tìm kiếm</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body d-flex align-items-center">
-                <div class="input-group w-75 mx-auto d-flex">
-                    <input type="search" class="form-control p-3" placeholder="Nhập từ khoá" aria-describedby="search-icon-1">
-                    <span id="search-icon-1" class="input-group-text btn border p-3"><i class="fa fa-search text-white"></i></span>
-                </div>
-            </div>
-        </div>
     </div>
+
+    <!-- Menu mở trên desktop (không collapse) -->
+    <div *ngIf="!isMobile" class="navbar-collapse">
+      <div class="navbar-nav ms-auto py-0">
+        <a routerLink="/home" routerLinkActive="active" class="nav-item nav-link">{{ 'HOME' | translate }}</a>
+        <a routerLink="/about-us" routerLinkActive="active" class="nav-item nav-link">{{ 'ABOUT_US' | translate }}</a>
+        <a routerLink="/product" routerLinkActive="active" class="nav-item nav-link">{{ 'PRODUCT' | translate }}</a>
+        <a routerLink="/service" routerLinkActive="active" class="nav-item nav-link">{{ 'SERVICE' | translate }}</a>
+        <a routerLink="/blog" routerLinkActive="active" class="nav-item nav-link">{{ 'BLOG' | translate }}</a>
+      </div>
+      <div class="d-none d-xl-flex me-3">
+        <div class="d-flex flex-column pe-3 border-end border-primary">
+          <span class="text-primary">{{ 'FREE_SHIPPING' | translate }}</span>
+          <a href="tel:+4733378901"><span class="text-primary">{{ 'CONTACT' | translate }}: 0972603267</span></a>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-md-square d-flex flex-shrink-0 mb-3 mb-lg-0 rounded-circle me-3"
+        data-bs-toggle="modal" data-bs-target="#searchModal">
+        <i class="fa fa-search"></i>
+      </button>
+      <button [routerLink]="['/cart']"
+        class="btn btn-primary btn-md-square d-flex flex-shrink-0 mb-3 mb-lg-0 rounded-circle position-relative me-3">
+        <i class="fa fa-shopping-cart"></i>
+        <span class="cart-count">{{ cartItemCount }}</span> <!-- Hiển thị số lượng -->
+      </button>
+      <div class="dropdown">
+        <a nz-dropdown [nzDropdownMenu]="menu">
+          <i nz-icon nzType="global" class="anticon"></i>{{ currentLanguage === 'vi' ? 'VI' : 'EN' }}<i nz-icon nzType="down"></i>
+        </a>
+        <nz-dropdown-menu #menu="nzDropdownMenu">
+          <ul nz-menu nzSelectable>
+            <li nz-menu-item (click)="selectLanguage('en')">English</li>
+            <li nz-menu-item (click)="selectLanguage('vi')">Tiếng Việt</li>
+          </ul>
+        </nz-dropdown-menu>
+      </div>     
+    </div>
+  </nav>
+</div>
+<!-- Navbar & Hero End -->
+
+<!-- Modal Search Start -->
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content rounded-0">
+      <div class="modal-header">
+        <h4 class="modal-title mb-0" id="exampleModalLabel">{{ 'SEARCH_PLACEHOLDER' | translate }}</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body d-flex align-items-center">
+        <div class="input-group w-75 mx-auto d-flex">
+          <input type="search" class="form-control p-3" placeholder="{{ 'SEARCH_PLACEHOLDER' | translate }}" aria-describedby="search-icon-1">
+          <span id="search-icon-1" class="input-group-text btn border p-3"><i
+              class="fa fa-search text-white"></i></span>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <!-- Modal Search End -->

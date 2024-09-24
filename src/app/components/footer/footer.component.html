@@ -4,8 +4,8 @@
                 <div class="row g-5 mb-5 align-items-center">
                     <div class="col-lg-7">
                         <div class="position-relative mx-auto">
-                            <input class="form-control rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Nhập email để được tư vấn">
-                            <button type="button" class="btn btn-secondary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Đặt mua</button>
+                            <input class="form-control rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="{{ 'EMAIL_PLACEHOLDER' | translate }}">
+                            <button type="button" class="btn btn-secondary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">{{ 'ORDER' | translate }}</button>
                         </div>
                     </div>
                     <div class="col-lg-5">
@@ -43,20 +43,20 @@
                     </div> -->
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
-                            <h4 class="text-white mb-4">Giờ làm việc</h4>
+                            <h4 class="text-white mb-4">{{ 'WORK_HOURS' | translate }}</h4>
                             <div class="mb-3">
-                                <h6 class="text-muted mb-0">Thứ 2 - Thứ 7:</h6>
-                                <p class="text-white mb-0">08.00 giờ - 20.00 giờ</p>
+                                <h6 class="text-muted mb-0">{{ 'MONDAY' | translate }} - {{ 'SATURDAY' | translate }}:</h6>
+                                <p class="text-white mb-0">08.00 {{ 'HOUR' | translate }} - 20.00 {{ 'HOUR' | translate }}</p>
                             </div>
                             <div class="mb-3">
-                                <h6 class="text-muted mb-0">Chủ nhật:</h6>
-                                <p class="text-white mb-0">Không làm việc</p>
+                                <h6 class="text-muted mb-0">{{ 'SUNDAY' | translate }}:</h6>
+                                <p class="text-white mb-0">{{ 'OFF' | translate }}</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
-                            <h4 class="text-white mb-4">Thông tin liên hệ</h4>
+                            <h4 class="text-white mb-4">{{ 'CONTACT' | translate }}</h4>
                             <a href="#"><i class="fa fa-map-marker-alt me-2"></i> 44/26/53 Ngô Thì Nhậm, Dĩ An, Bình Dương</a>
                             <!-- <a href="mailto:info@example.com"><i class="fas fa-envelope me-2"></i> info&#64;example.com</a>
                             <a href="mailto:info@example.com"><i class="fas fa-envelope me-2"></i> info&#64;example.com</a> -->
@@ -74,13 +74,13 @@
             <div class="container">
                 <div class="row g-4 align-items-center">
                     <div class="col-md-6 text-center text-md-start mb-md-0">
-                        <span class="text-body"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>PHGroup</a> , Bản quyền.</span>
+                        <span class="text-body"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>PHGroup</a> , {{ 'COPY_RIGHT' | translate }}.</span>
                     </div>
                     <div class="col-md-6 text-center text-md-end text-body">
                         <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
                         <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
                         <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                         Thiết kế <a class="border-bottom text-white" href="https://zalo.me/0931881584">Phan Hoang</a> Phát triển bởi <a class="border-bottom text-white" href="">PHGroup</a>
+                        {{ 'DESIGNED' | translate }} <a class="border-bottom text-white" href="https://zalo.me/0931881584">Phan Hoang</a> {{ 'DEVELOPED' | translate }} <a class="border-bottom text-white" href="">PHGroup</a>
                     </div>
                 </div>
             </div>

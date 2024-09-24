@@ -28,6 +28,27 @@ button {
   display: none;
 }
 
+.dropdown-container {
+  position: relative; /* Ensure dropdown stays relative to parent container */
+}
+
+.dropdown .dropdown-menu {
+  position: absolute;
+  top: 100%; /* Display the dropdown below the button */
+  left: 0;
+  z-index: 1000; /* Ensure it stays above other content */
+  display: none; /* Initially hidden */
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block; /* Show on hover */
+}
+
+.navbar-nav a {
+  padding-right: 15px;
+}
+
+
 @media (max-width: 768px) {
   .navbar-collapse {
     display: block;

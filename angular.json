@@ -53,7 +53,8 @@
               "src/assets/lib/counterup/counterup.min.js",
               "src/assets/lib/owlcarousel/owl.carousel.min.js",
               "src/assets/js/main.js",
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"             
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/@popperjs/core/dist/umd/popper.min.js"             
             ],
             "server": "src/main.server.ts",
             "prerender": true,

@@ -1,17 +1,27 @@
-import { Component } from '@angular/core';
+import { Component ,OnInit} from '@angular/core';
 import { Message } from '../../interfaces/message';
-
+import { LanguageService } from '../../services/language.service';
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css']  // Sửa lại `styleUrl` thành `styleUrls`
 })
-export class FooterComponent {
+export class FooterComponent implements OnInit {
+  currentLanguage: string;
   messages: Message[] = [
     { sender: 'Bot', text: 'Xin chào! Chúng tôi rất vui được hỗ trợ bạn. Bạn cần giúp đỡ gì ạ?', link:'',displayText:'' }
   ];
   newMessage: string = '';
   isChatVisible: boolean = false;
+  constructor(private languageService: LanguageService) {
+    this.currentLanguage = 'en'; // Ngôn ngữ mặc định
+  }
+
+  ngOnInit(): void {
+    this.languageService.currentLanguage.subscribe(lang => {
+      this.currentLanguage = lang; // Cập nhật ngôn ngữ khi thay đổi
+    });
+  }
 
   // Hàm gửi tin nhắn
   sendMessage() {

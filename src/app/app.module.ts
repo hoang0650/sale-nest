@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-
+import { HttpClient } from '@angular/common/http';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -22,6 +24,8 @@ import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzRateModule } from 'ng-zorro-antd/rate';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
 import { TestimonialComponent } from './components/testimonial/testimonial.component';
 import { ServiceComponent } from './components/service/service.component';
@@ -38,6 +42,10 @@ import { SafeUrlPipe } from './pipes/safe-url.pipe';
 import { BlogDetailComponent } from './components/blog-detail/blog-detail.component';
 
 registerLocaleData(en);
+// Cấu hình để load các file JSON cho đa ngôn ngữ
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -65,13 +73,23 @@ registerLocaleData(en);
   ],
   imports: [
     BrowserModule,
+    TranslateModule.forRoot({
+      defaultLanguage: 'vi', // Ngôn ngữ mặc định
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
     AppRoutingModule,
     FormsModule,
     NzLayoutModule,
     NzCarouselModule,
     NzAvatarModule,
     NzButtonModule,
-    NzRateModule
+    NzRateModule,
+    NzDropDownModule,
+    NzIconModule
   ],
   providers: [
     provideClientHydration(),
